@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { useStore } from '../store';
+import { ref } from "vue";
+import { useStore } from "../store";
 
-defineProps<{ msg: string }>()
+defineProps<{ msg: string }>();
 
-const count = ref(0)
+const count = ref(0);
 </script>
 
 <template>
@@ -25,7 +25,7 @@ const count = ref(0)
     </a>
   </p>
 
-  <button type="button" @click="count++">count is: {{count}}</button>
+  <button type="button" @click="count++">count is: {{ count }}</button>
   <p>
     Edit
     <code>components/HelloWorld.vue</code> to test hot module replacement.
