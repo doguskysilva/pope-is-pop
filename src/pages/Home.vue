@@ -7,6 +7,6 @@ import HelloWorld from "@/components/HelloWorld.vue";
     Hello, I'm Scripturas
   </h1>
   <div class="text-center">
-    <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+    <HelloWorld msg="Salmos 23.1" />
   </div>
 </template>
