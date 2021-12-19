@@ -16,7 +16,7 @@ describe("createChapterSearchFromParamsTest", () => {
     expect(createChapterSearchFromParams(chapterQuery)).toEqual({
       chapter: 0,
       book: "",
-      version: ""
-    })
+      version: "",
+    });
   });
 });
