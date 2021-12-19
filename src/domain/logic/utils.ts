@@ -1,5 +1,5 @@
 import { split } from "ramda";
-import { ChapterSearch } from "../models/chapter";
+import { ChapterSearch } from "../models";
 
 export function createChapterSearchFromParams(
   chapterQuery: string

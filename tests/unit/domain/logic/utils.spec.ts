@@ -10,4 +10,13 @@ describe("createChapterSearchFromParamsTest", () => {
       version: "nth",
     });
   });
+  it("shoul be create ChapterSerach with empty parameters", () => {
+    const chapterQuery = "";
+
+    expect(createChapterSearchFromParams(chapterQuery)).toEqual({
+      chapter: 0,
+      book: "",
+      version: ""
+    })
+  });
 });
