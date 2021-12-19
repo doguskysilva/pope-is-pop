@@ -8,12 +8,11 @@ export interface Verse {
 }
 
 export interface Book {
-  order: string;
+  order: number;
   name: string;
   abbreviation: string;
   nameLong: string;
   testament: Testament;
-  icon: string;
   chapters: {
     [key: number]: Array<Verse>;
   };
