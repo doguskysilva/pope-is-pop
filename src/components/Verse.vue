@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Verse from "@/domain/models/verse";
+import { Verse } from "@/domain/models";
 
 defineProps<{ verse: Verse }>();
 </script>
