@@ -1,7 +1,7 @@
 import { Book, Verse } from "../models";
 import { range, fromPairs, pipe, partial, map } from "ramda";
 
-const mountChapters = pipe<any, any, any, { [key: number]: Array<Verse> }>(
+const mountChapters = pipe<any, any, any, { [key: string]: Array<Verse> }>(
   partial(range, [1]),
   map((n) => [n, []]),
   fromPairs

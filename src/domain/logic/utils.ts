@@ -11,3 +11,11 @@ export function createChapterSearchFromParams(
     version: parts[0] || "",
   };
 }
+
+export function generateChapterSearchQuery(
+  version: string,
+  abbreviation: string,
+  chapter: number
+) {
+  return `${version}.${abbreviation}.${chapter}`;
+}

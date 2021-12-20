@@ -14,7 +14,7 @@ export interface Book {
   nameLong: string;
   testament: Testament;
   chapters: {
-    [key: number]: Array<Verse>;
+    [key: string]: Array<Verse>;
   };
 }
 

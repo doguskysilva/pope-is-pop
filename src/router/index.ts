@@ -6,7 +6,7 @@ import CompareChapters from "@/pages/CompareChapters.vue";
 
 const routes = [
   { path: "/", component: Home },
-  { path: "/chapter/:version/:book/:chapter", component: Chapter },
+  { path: "/chapter/:chapterSearch", name: "chapter", component: Chapter },
   { path: "/chapter-compare", component: CompareChapters },
   { path: "/about", component: About },
 ];
