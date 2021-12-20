@@ -1,5 +1,5 @@
-import { Book } from "@/domain/models";
-import { requestBooks } from "@/domain/requests";
+import { Book, Verse } from "@/domain/models";
+import { requestBooks, requestChapter } from "@/domain/requests";
 import { InjectionKey } from "vue";
 import { createStore, useStore as baseUseStore, Store } from "vuex";
 import * as adapter from "@/domain/adapters";
@@ -30,6 +30,7 @@ export const store = createStore<State>({
     LOAD_BOOKS(state: State, books: Array<Book>) {
       state.books = books;
     },
+    LOAD_CHAPTER(state: State, verses: Array<Verse>) {},
     UPDATE_BOOK(state: State, book: Book) {
       state.book = book;
     },
@@ -45,6 +46,7 @@ export const store = createStore<State>({
         commit("UPDATE_BOOK", books[0]);
       });
     },
+    fetchChapter({ commit }) {},
     changeBook({ commit }, book) {
       commit("UPDATE_BOOK", book);
       commit("UPDATE_CHAPTER", 1);

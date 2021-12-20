@@ -1,11 +1,10 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { createChapterSearchFromParams } from "@/domain/logic/utils";
-import { useRoute, useRouter } from "vue-router";
-import { ChapterSearch } from "@/domain/models/chapter";
+import { useRoute } from "vue-router";
+import { ChapterSearch } from "@/domain/models";
 import { clone } from "ramda";
 
-const router = useRouter();
 const route = useRoute();
 let chapterSearch = ref(<ChapterSearch>{});
 let chapterSearchToCompare = ref(<ChapterSearch>{});

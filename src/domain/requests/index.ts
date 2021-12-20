@@ -1,5 +1,7 @@
+import { ChapterSearch } from "../models";
+
 export function requestBooks() {
-  const returnOfApi = [
+  const response = [
     {
       id: "JAS",
       bibleId: "de4e12af7f28f599-01",
@@ -262,6 +264,21 @@ export function requestBooks() {
   ];
 
   return new Promise<Array<{}>>((resolve) => {
-    resolve(returnOfApi);
+    resolve(response);
+  });
+}
+
+export function requestChapter(chapterSearch: ChapterSearch) {
+  const response = [
+    { number: 1, text: "Praesent pharetra ac mi sit amet mattis." },
+    { number: 2, text: "Etiam eget metus in lorem accumsan volutpat." },
+    { number: 3, text: "Praesent non congue massa." },
+    { number: 4, text: "Morbi eu justo non lacus lobortis rhoncus." },
+    { number: 5, text: "Sed ac luctus turpis." },
+    { number: 6, text: "Aenean in euismod purus." },
+  ];
+
+  return new Promise<Array<{}>>((resolve) => {
+    resolve(response);
   });
 }
