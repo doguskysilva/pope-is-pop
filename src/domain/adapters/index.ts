@@ -1,4 +1,11 @@
-import { Book } from "../models";
+import { Book, Verse } from "../models";
+import { range, fromPairs, pipe, partial, map } from "ramda";
+
+const mountChapters = pipe<any, any, any, { [key: number]: Array<Verse> }>(
+  partial(range, [1]),
+  map((n) => [n, []]),
+  fromPairs
+);
 
 export function fromApiBookToModelBook(book: any): Book {
   return {
@@ -7,6 +14,6 @@ export function fromApiBookToModelBook(book: any): Book {
     order: 0,
     abbreviation: book.abbreviation,
     testament: "new",
-    chapters: {},
+    chapters: mountChapters(book.chapters.length),
   };
 }
