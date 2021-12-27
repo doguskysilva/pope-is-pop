@@ -1,5 +1,5 @@
 import { Book, Verse } from "@/domain/models";
-import { requestBooks, requestChapter } from "@/domain/requests";
+import { requestBooks, requestChapter } from "@/domain/services";
 import { InjectionKey } from "vue";
 import { createStore, useStore as baseUseStore, Store } from "vuex";
 import * as adapter from "@/domain/adapters";
