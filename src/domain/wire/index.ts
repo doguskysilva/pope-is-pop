@@ -1,7 +1,3 @@
-export namespace In {
+export namespace In {}
 
-}
-
-export namespace Out {
-
-}
+export namespace Out {}
