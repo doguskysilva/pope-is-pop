@@ -1,4 +1,4 @@
-import { createChapterSearchFromParams } from "@/domain/logic/utils";
+import { createChapterSearchFromParams } from "@/domain/logic";
 
 describe("createChapterSearchFromParamsTest", () => {
   it("should be create ChapterSearch with valid parameters", () => {

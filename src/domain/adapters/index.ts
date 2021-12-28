@@ -17,3 +17,10 @@ export function fromApiBookToModelBook(book: any): Book {
     chapters: mountChapters(book.chapters.length),
   };
 }
+
+export function fromApiVerseToModelVerse(verse: any): Verse {
+  return {
+    number: verse["number"],
+    text: verse["text"],
+  };
+}

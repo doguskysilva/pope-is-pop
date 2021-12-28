@@ -1,5 +1,5 @@
 import { split } from "ramda";
-import { ChapterSearch } from "../models";
+import { Book, ChapterSearch } from "@/domain/models";
 
 export function createChapterSearchFromParams(
   chapterQuery: string
@@ -18,4 +18,12 @@ export function generateChapterSearchQuery(
   chapter: number
 ) {
   return `${version}.${abbreviation}.${chapter}`;
+}
+
+export function chapters(book: Book) {
+  return Object.keys(book.chapters);
+}
+
+export function numbersOfChapter(book: Book): number {
+  return chapters(book).length;
 }

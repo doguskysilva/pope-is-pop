@@ -5,7 +5,7 @@ import { useRouter } from "vue-router";
 import { Book } from "@/domain/models";
 import ListBooks from "@/components/ListBooks.vue";
 import ListChapters from "@/components/ListChapters.vue";
-import { generateChapterSearchQuery } from "@/domain/logic/utils";
+import { generateChapterSearchQuery } from "@/domain/logic";
 
 const store = useStore();
 const router = useRouter();

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import { createChapterSearchFromParams } from "@/domain/logic/utils";
+import { createChapterSearchFromParams } from "@/domain/logic";
 import { useRoute } from "vue-router";
 import { ChapterSearch } from "@/domain/models";
 import { clone } from "ramda";
