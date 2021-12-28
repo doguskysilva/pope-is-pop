@@ -5,7 +5,7 @@ defineProps<{ verse: Verse }>();
 </script>
 
 <template>
-  <p>
-    <span>{{ verse.number }}</span> {{ verse.text }}
+  <p class="w-full text-lg">
+    <span class="text-sm">{{ verse.number }} - </span> {{ verse.text }}
   </p>
 </template>
