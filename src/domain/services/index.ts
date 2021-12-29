@@ -278,6 +278,8 @@ export function requestChapter(chapterSearch: ChapterSearch) {
     { number: 6, text: "Aenean in euismod purus." },
   ];
 
+  console.log("Requesting...", chapterSearch);
+
   return new Promise<Array<{}>>((resolve) => {
     resolve(response);
   });
