@@ -4,11 +4,9 @@ import {
   generateChapterSearchQuery,
 } from "@/domain/logic";
 import { useStore } from "@/store";
-import { computed } from "vue";
+import { computed, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import Verse from "@/components/Verse.vue";
-
-console.log("Hey")
 
 const route = useRoute();
 const store = useStore();
@@ -24,6 +22,10 @@ const canNavigatePreviousChapter = computed(
   () => store.getters.navigateToPrevious
 );
 
+// watch(() => route.params.chapterSearch, () => {
+//     store.dispatch("fetchChapter", createChapterSearchFromParams());
+// })
+
 store.dispatch("fetchChapter", chapterSearch);
 
 function changeChapter(chapter: number) {
@@ -36,7 +38,6 @@ function changeChapter(chapter: number) {
 
     store.dispatch("changeChapter", chapter);
     router.push({ name: "chapter", params: { chapterSearch: searchString } });
-    store.dispatch("fetchChapter", createChapterSearchFromParams(searchString));
   }
 }
 
