@@ -54,7 +54,12 @@ export const store = createStore<State>({
     },
   },
   actions: {
-    fetchBooks({ commit }) {
+    fetchBooks({ commit, state }) {
+      if (state.books.length > 0) {
+        return null;
+      }
+
+      console.log("Fetching books...");
       requestBooks().then((booksFromAPI) => {
         const books = booksFromAPI.map(adapter.fromApiBookToModelBook);
         commit("LOAD_BOOKS", books);

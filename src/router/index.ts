@@ -3,7 +3,7 @@ import Home from "@/pages/Home.vue";
 import About from "@/pages/About.vue";
 import Chapter from "@/pages/Chapter.vue";
 import CompareChapters from "@/pages/CompareChapters.vue";
-import { useStore } from "@/store";
+import { store } from "@/store";
 
 const routes = [
   { path: "/", name: "books", component: Home, meta: { requiresBooks: true } },
@@ -27,11 +27,8 @@ const router = createRouter({
   routes,
 });
 
-const store = useStore()
-
 router.beforeEach((to, from) => {
   if (to.meta.requiresBooks) {
-    console.log("Fetching books")
     store.dispatch("fetchBooks");
   }
 });

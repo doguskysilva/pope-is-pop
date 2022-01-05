@@ -5,12 +5,12 @@ import {
 } from "@/domain/logic";
 import { useStore } from "@/store";
 import { computed, watch } from "vue";
-import { useRoute, useRouter } from "vue-router";
+import { useRoute } from "vue-router";
 import Verse from "@/components/Verse.vue";
 
 const route = useRoute();
 const store = useStore();
-const router = useRouter();
+// const router = useRouter();
 const chapterSearch = createChapterSearchFromParams(
   route.params.chapterSearch.toString()
 );
@@ -22,24 +22,23 @@ const canNavigatePreviousChapter = computed(
   () => store.getters.navigateToPrevious
 );
 
-// watch(() => route.params.chapterSearch, () => {
-//     store.dispatch("fetchChapter", createChapterSearchFromParams());
-// })
-
 store.dispatch("fetchChapter", chapterSearch);
 
 function changeChapter(chapter: number) {
-  if (book.value) {
-    const searchString = generateChapterSearchQuery(
-      chapterSearch.version,
-      book.value?.abbreviation,
-      chapter
-    );
-
-    store.dispatch("changeChapter", chapter);
-    router.push({ name: "chapter", params: { chapterSearch: searchString } });
-  }
+  // if (book.value) {
+  //   const searchString = generateChapterSearchQuery(
+  //     chapterSearch.version,
+  //     book.value?.abbreviation,
+  //     chapter
+  //   );
+  //   store.dispatch("changeChapter", chapter);
+  //   router.push({ name: "chapter", params: { chapterSearch: searchString } });
+  // }
 }
+
+// watch(() => route.params.chapterSearch, () => {
+//     store.dispatch("fetchChapter", createChapterSearchFromParams());
+// })
 
 function navigate(direction: string) {
   if (direction == "previous") {

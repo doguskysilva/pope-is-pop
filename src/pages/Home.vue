@@ -16,8 +16,6 @@ const books = computed(() => store.state.books);
 const chapters = computed(() => store.getters.chaptersFromSelectedBook);
 const chapterSelected = computed(() => store.state.chapterSelected);
 
-store.dispatch("fetchBooks");
-
 function changeBook(book: Book) {
   store.dispatch("changeBook", book);
 }
